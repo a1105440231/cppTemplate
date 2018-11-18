@@ -24,7 +24,7 @@ import ${fragmentPackageName}.${pageName}Fragment
 <#elseif needFragment>
 @FragmentScope
 </#if>
-@Component(modules = arrayOf(${pageName}Module::class),dependencies = arrayOf(AppComponent::class))
+@Component(modules = [(${pageName}Module::class)],dependencies = [(AppComponent::class)])
 interface ${pageName}Component {
   <#if needActivity && needFragment>
 	fun inject(activity:${pageName}Activity)

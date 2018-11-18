@@ -39,8 +39,4 @@ BasePresenter<${pageName}Contract.Model, ${pageName}Contract.View>(model,rootVie
     @Inject
     lateinit var mAppManager:AppManager
 
-
-    override fun onDestroy() {
-          super.onDestroy();
-    }
 }

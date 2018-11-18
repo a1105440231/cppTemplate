@@ -43,7 +43,7 @@ class ${pageName}Fragment : BaseFragment<${pageName}Presenter>() , ${pageName}Co
 
 
     override fun setupFragmentComponent(appComponent:AppComponent) {
-        Dagger${pageName}Component //如找不到该类,请编译一下项目
+        Dagger${pageName}Component
                 .builder()
                 .appComponent(appComponent)
                 .${extractLetters(pageName[0]?lower_case)}${pageName?substring(1,pageName?length)}Module(${pageName}Module(this))
@@ -99,23 +99,13 @@ class ${pageName}Fragment : BaseFragment<${pageName}Presenter>() , ${pageName}Co
 
     }
 
-    override fun showLoading() {
+    override fun showLoading() {}
 
-    }
+    override fun hideLoading() {}
 
-    override fun hideLoading() {
+    override fun showMessage(message:String) = ArmsUtils.snackbarText(message)
 
-    }
+    override fun launchActivity(intent:Intent) = ArmsUtils.startActivity(intent)
 
-    override fun showMessage(message:String) {
-        ArmsUtils.snackbarText(message)
-    }
-
-    override fun launchActivity(intent:Intent) {
-        ArmsUtils.startActivity(intent)
-    }
-
-    override fun killMyself() {
-
-    }
+    override fun killMyself() {}
 }
