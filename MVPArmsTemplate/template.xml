@@ -19,6 +19,12 @@
         help="请填写页面名,如填写 Main,会自动生成 MainActivity, MainPresenter 等文件" />
 
     <parameter
+        id="description"
+        type="string"
+        name="description"
+        help="描述"/>
+
+    <parameter
             id="packageName"
             name="Root Package Name"
             type="string"
@@ -194,7 +200,7 @@
         suggest="${packageName}.di.module"
         visibility="needDagger"
         help="Moudle 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
-        />  
+        />
 
 
 

@@ -19,6 +19,12 @@ import ${contractPackageName}.${pageName}Contract
 
 
 
+/**
+ * M：[${modelPackageName}.${pageName}Model]
+ * V：[${pageName}Activity]
+ * P：[${pageName}Presenter]
+ * 描述：${description}
+ */
 <#if needActivity && needFragment>
 @ActivityScope
 <#elseif needActivity>

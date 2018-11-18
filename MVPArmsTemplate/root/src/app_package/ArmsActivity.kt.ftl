@@ -17,17 +17,10 @@ import ${packageName}.R
 
 
 /**
- * 如果没presenter
- * 你可以这样写
- *
- * @ActivityScope(請注意命名空間) class NullObjectPresenterByActivity
- * @Inject constructor() : IPresenter {
- * override fun onStart() {
- * }
- *
- * override fun onDestroy() {
- * }
- * }
+ * M：[${modelPackageName}.${pageName}Model]
+ * V：[${pageName}Activity]
+ * P：[${pageName}Presenter]
+ * 描述：${description}
  */
 class ${pageName}Activity : BaseActivity<${pageName}Presenter>() , ${pageName}Contract.View {
 

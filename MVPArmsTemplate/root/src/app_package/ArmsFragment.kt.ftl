@@ -19,19 +19,11 @@ import ${presenterPackageName}.${pageName}Presenter
 
 import ${packageName}.R
 
-
 /**
- * 如果没presenter
- * 你可以这样写
- *
- * @FragmentScope(請注意命名空間) class NullObjectPresenterByFragment
- * @Inject constructor() : IPresenter {
- * override fun onStart() {
- * }
- *
- * override fun onDestroy() {
- * }
- * }
+ * M：[${modelPackageName}.${pageName}Model]
+ * V：[${pageName}Fragment]
+ * P：[${pageName}Presenter]
+ * 描述：${description}
  */
 class ${pageName}Fragment : BaseFragment<${pageName}Presenter>() , ${pageName}Contract.View{
     companion object {
