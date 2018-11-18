@@ -2,8 +2,6 @@
 	package="${packageName}">
 
     <application>
-        <activity android:name="${ativityPackageName}.${activityClass}"
-            >
-        </activity>
+        <activity android:name="${ativityPackageName}.${activityClass}"/>
     </application>
 </manifest>

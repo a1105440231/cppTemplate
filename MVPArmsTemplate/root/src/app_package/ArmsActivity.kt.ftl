@@ -31,8 +31,10 @@ import ${packageName}.R
  */
 class ${pageName}Activity : BaseActivity<${pageName}Presenter>() , ${pageName}Contract.View {
 
+    override fun initView(savedInstanceState:Bundle?) = return R.layout.${activityLayoutName}
+
     override fun setupActivityComponent(appComponent:AppComponent) {
-        Dagger${pageName}Component //如找不到该类,请编译一下项目
+        Dagger${pageName}Component
                 .builder()
                 .appComponent(appComponent)
                 .${extractLetters(pageName[0]?lower_case)}${pageName?substring(1,pageName?length)}Module(${pageName}Module(this))
@@ -40,34 +42,18 @@ class ${pageName}Activity : BaseActivity<${pageName}Presenter>() , ${pageName}Co
                 .inject(this)
     }
 
-
-    override fun initView(savedInstanceState:Bundle?):Int {
-              return R.layout.${activityLayoutName} //如果你不需要框架帮你设置 setContentView(id) 需要自行设置,请返回 0
-    }
-
-
-
     override fun initData(savedInstanceState:Bundle?) {
 
     }
 
 
-    override fun showLoading() {
+    override fun showLoading() {}
 
-    }
+    override fun hideLoading() {}
 
-    override fun hideLoading() {
+    override fun showMessage(message:String) = ArmsUtils.snackbarText(message)
 
-    }
+    override fun launchActivity(intent:Intent) = ArmsUtils.startActivity(intent)
 
-    override fun showMessage(message:String) {
-        ArmsUtils.snackbarText(message)
-    }
-    override fun launchActivity(intent:Intent) {
-        ArmsUtils.startActivity(intent)
-    }
-
-    override fun killMyself() {
-        finish()
-    }
+    override fun killMyself() = finish()
 }
